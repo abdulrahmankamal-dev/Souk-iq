@@ -1,0 +1,88 @@
+/* SOUK.IQ RTL Overrides for Arabic and Kurdish Languages */
+
+[dir="rtl"] {
+  text-align: right;
+}
+
+[dir="rtl"] .ms-auto {
+  margin-right: auto !important;
+  margin-left: 0 !important;
+}
+
+[dir="rtl"] .me-auto {
+  margin-left: auto !important;
+  margin-right: 0 !important;
+}
+
+/* Float adjustments */
+[dir="rtl"] .float-end {
+  float: left !important;
+}
+
+[dir="rtl"] .float-start {
+  float: right !important;
+}
+
+/* Margin and Padding directional flips */
+[dir="rtl"] .pe-0 {
+  padding-left: 0 !important;
+  padding-right: inherit;
+}
+[dir="rtl"] .ps-0 {
+  padding-right: 0 !important;
+  padding-left: inherit;
+}
+
+/* Breadcrumb separator flip */
+[dir="rtl"] .breadcrumb-item + .breadcrumb-item::before {
+  float: right;
+  padding-left: var(--bs-breadcrumb-item-padding-x);
+  padding-right: 0;
+  content: var(--bs-breadcrumb-divider, "/");
+}
+
+/* Form floating label alignments */
+[dir="rtl"] .form-floating > label {
+  right: 0;
+  left: auto;
+}
+
+[dir="rtl"] .form-floating > .form-control:focus ~ label,
+[dir="rtl"] .form-floating > .form-control:not(:placeholder-shown) ~ label,
+[dir="rtl"] .form-floating > .form-select ~ label {
+  transform: scale(.85) translateY(-.5rem) translateX(.15rem);
+}
+
+/* Star rating float direction */
+[dir="rtl"] .star-rating {
+  direction: ltr; /* Keeps hover interactions standard */
+  display: inline-flex;
+}
+
+/* Toast alert adjustments */
+[dir="rtl"] .souk-toast {
+  right: auto;
+  left: 24px;
+  border-left: none;
+  border-right: 5px solid var(--color-primary);
+  animation: slideInToastRtl var(--transition-spring);
+}
+
+[dir="rtl"] .souk-toast--success {
+  border-right-color: var(--color-success);
+}
+
+[dir="rtl"] .souk-toast--error {
+  border-right-color: var(--color-error);
+}
+
+@keyframes slideInToastRtl {
+  from {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
